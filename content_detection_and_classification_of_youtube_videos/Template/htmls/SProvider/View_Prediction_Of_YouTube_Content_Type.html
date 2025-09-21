@@ -1,0 +1,109 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style12 {color: #FFFF00; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">View YouTube Content Detection Type Details  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                               <table border="5" bordercolor="#FF00FF">
+
+
+                                   <tr>
+
+                                       <td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">video_id</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">title</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">channel_title</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">category</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">publish_time</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">content</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">views</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">likes</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">dislikes</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">comment_count</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">Video_link</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">publish_date</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">views_per_day</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">Prediction</span></div></td>
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+                           <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.video_id}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><textarea>{{object.title}}</textarea></td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.channel_title}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.category}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.publish_time}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><textarea>{{object.content}}</textarea></td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.views}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.likes}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.dislikes}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.comment_count}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Video_link}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.publish_date}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.views_per_day}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Prediction}}</td>
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
